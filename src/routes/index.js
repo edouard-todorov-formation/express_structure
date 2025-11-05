@@ -4,15 +4,9 @@ const { Router } = require("express");
 //crée le routeur
 const router = Router();
 
+//montage des sous routes
+//route product (/monapi/product)
+router.use("/products", require("./products.routes"));
+
 //exporte le routeur
 module.exports = router;
-
-//route de test
-// app.post("/test", (req, res)=>{
-//     const databody = req.body;
-//     res.json({
-//         success: true,
-//         message: "ok",
-//         data: databody
-//     });
-// })
