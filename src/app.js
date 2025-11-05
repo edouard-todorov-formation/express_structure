@@ -6,7 +6,7 @@ const cors = require("cors"); //installé avec "npm install cors"
 const morgan = require("morgan"); //installé avec "npm install morgan"
 //import des routes du projet
 const router = require("./routes");
-
+const notFound = require("./middlewares/notFound")
 
 //crée l'application express
 const app = express();
@@ -23,6 +23,8 @@ app.use(express.json());        //new (Json)b
 //chercher toute mes routes (sous la route /monapi)
 app.use("/monapi", router);
 
+//je recupere la requete qui n'a pas trouvé de route
+app.use(notFound);
 
 //export app
 module.exports = app;
