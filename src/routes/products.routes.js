@@ -8,5 +8,7 @@ const router = Router();
 
 //Definir les endpoints
 router.get("/test", productsController.test);
+router.get("/", productsController.listProducts);
+
 
 module.exports = router;
